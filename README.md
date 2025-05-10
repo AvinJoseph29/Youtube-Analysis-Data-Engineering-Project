@@ -203,7 +203,100 @@ Go to AWS Lambda to perform the transformation using python code and click on cr
 
 ![image](https://github.com/user-attachments/assets/d3147a56-e12c-41f0-bee2-4902463e1096)
 
-We've to create a role for lambda
+We've to create a role for lambda 
+![image](https://github.com/user-attachments/assets/495638c2-bebf-4e56-9c3b-4a8da63ae816)
+
+![image](https://github.com/user-attachments/assets/22e7558d-71a6-45bb-8c7c-82ec5f1ae171)
+
+![image](https://github.com/user-attachments/assets/aa85d486-9cac-4d8d-a1c3-4c3a2dca9153)
+![image](https://github.com/user-attachments/assets/6a913e3b-4db9-451d-9954-d79394a4dcfd)
+
+Now go back to lambda , under the execution role , select Use an exisiting role -> role that we create for lambda -> Then click on create function
+
+![image](https://github.com/user-attachments/assets/e8c7ed3c-ad4d-49ee-8547-bf5db33e5786)
+![image](https://github.com/user-attachments/assets/33cf86fe-562e-41e6-a32e-f7397145c7be)
+Have the lambda_function.py code here
+![image](https://github.com/user-attachments/assets/77ef21e2-c7cd-4a8d-a5e1-f77e0bfefe78)
+
+Create a new s3 bucket for cleansed version
+
+Go to configuration and click edit
+![image](https://github.com/user-attachments/assets/21430b3d-6091-4ffa-8f1e-abc4055f9b5b)
+
+![image](https://github.com/user-attachments/assets/e2a14886-5ad3-4603-a75d-e85c5fef4de2)
+
+Once you create the environment variable , you've to go and test your function
+
+![image](https://github.com/user-attachments/assets/a1e87bbf-834c-4ba5-af79-5a79e3b9fb2a)
+
+![image](https://github.com/user-attachments/assets/857c7366-0eb9-4452-813a-176a052fddd7)
+
+![image](https://github.com/user-attachments/assets/96975b98-e195-4d36-84ad-560ffd84b5e3)
+Once we test we get the below error
+
+![image](https://github.com/user-attachments/assets/f3b3bcca-3ce1-485a-a78f-51af014d99a6)
+
+![image](https://github.com/user-attachments/assets/7b3598e0-6576-453d-8ae0-648245b93231)
+
+![image](https://github.com/user-attachments/assets/8b8ce699-1681-4db6-9e6e-6bb05051410e)
+
+Now go to lambda and click on add layer
+
+![image](https://github.com/user-attachments/assets/4bef6385-ebcd-4f9b-a1e3-6be32d68c629)
+
+![image](https://github.com/user-attachments/assets/2520ecc0-a44b-4e85-ab7f-1e494930411c)
+
+![image](https://github.com/user-attachments/assets/8003584e-b2b5-4def-be90-ed8b3ee370b8)
+
+Again when we test , we get an error
+
+![image](https://github.com/user-attachments/assets/f70d4adb-5cf2-440b-b105-998697675a66)
+
+Go to configuration -> general cofiguration -> edit 
+
+![image](https://github.com/user-attachments/assets/85ec2f10-f324-4b6c-bed0-343b82d6d0e7)
+
+![image](https://github.com/user-attachments/assets/c8c9dcd4-d6be-4636-b45c-e88a50eb3165)
+
+Now we get one more error , that is because if ou see in the code we're trying to create a glue catalogue and glue table , but in the lamda role we'd created , we didn't give permission to glue 
+So now go to the s3 lamda role and add permission for glue as well
+
+![image](https://github.com/user-attachments/assets/84def752-7d67-4e64-85fc-ab8748d21a13)
+
+Now if we go back and test the code you can see the below output
+
+![image](https://github.com/user-attachments/assets/718ab818-e2b6-4f27-84bc-64d6b2602b42)
+
+Now if you go to glue and you can see the table being created and now you can query the data by viewing the data in athena
+
+
+![image](https://github.com/user-attachments/assets/eca34028-fc36-48ef-9d9a-e1d8c059baab)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
