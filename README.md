@@ -197,7 +197,15 @@ Click on view settings -> manage -> provide the s3 bucket created for athena
 
 ![image](https://github.com/user-attachments/assets/05945d90-4894-4bcd-bc92-bc40dbe667f7)
 
-Go to AWS Lambda to perform the transformation using python code
+Go to AWS Lambda to perform the transformation using python code and click on create function
+
+![image](https://github.com/user-attachments/assets/af7c5508-4d3c-4737-a6bf-4a8401f03bfb)
+
+![image](https://github.com/user-attachments/assets/d3147a56-e12c-41f0-bee2-4902463e1096)
+
+We've to create a role for lambda
+
+
 
 
 
