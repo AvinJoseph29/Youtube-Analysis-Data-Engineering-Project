@@ -389,6 +389,14 @@ Click on view jobs
 ![image](https://github.com/user-attachments/assets/2d04460b-b6c3-49f2-b8d6-e26f32e2f7b0)
 Visual with a source and target->crreate
 ![image](https://github.com/user-attachments/assets/4b09c70e-bf6b-4558-8496-ba1b035acf6f)
+![image](https://github.com/user-attachments/assets/2830c388-ffa8-4516-a441-b2db6f7197e6)
+![image](https://github.com/user-attachments/assets/567ced37-4ac9-4e35-b9e3-32dbd928a78f)
+Go to transform and click on  Join 
+![image](https://github.com/user-attachments/assets/e753bf9b-f9e8-4f5e-8ce5-cd4ad7d8e461)
+![image](https://github.com/user-attachments/assets/9ba35c74-a3a3-4618-8ed6-05a0cc168883)
+
+
+
 
 
 
