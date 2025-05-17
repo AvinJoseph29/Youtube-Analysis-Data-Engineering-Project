@@ -322,6 +322,103 @@ Once it is deleted , go to the lambda function that we had created and test
 
 Once the code runs successfully
 
+Now run the query
+![image](https://github.com/user-attachments/assets/05e4e1a5-324b-492e-a0ed-14f431a1b475)
+
+Now let's process the raw data which is given below
+![image](https://github.com/user-attachments/assets/17050204-5a89-43ae-a142-bca9c3aae7f1)
+
+For that go to AWS glue console -> jobs -> add job
+![image](https://github.com/user-attachments/assets/b14c78c2-1f0a-456f-83f4-9b9dbef58ab3)
+![image](https://github.com/user-attachments/assets/503e0cc2-be17-4023-9533-6d77ca565720)
+![image](https://github.com/user-attachments/assets/f4e5a1e9-af6e-4294-9e94-81654164b343)
+
+![image](https://github.com/user-attachments/assets/2cfb12d4-dde4-4f0b-a7db-862d66b52bd9)
+![image](https://github.com/user-attachments/assets/25403e05-e92a-4ff8-937a-82cd1e708589)
+
+Set the data target, target path as the cleansed version s3 bucket
+![image](https://github.com/user-attachments/assets/c6d5bbe2-182e-4e0a-b802-17123da8b92c)
+Update the datatypes wherever it is long into big integer
+![image](https://github.com/user-attachments/assets/a8e12de3-8c99-4c1d-a5e5-81a92ef79066)
+![image](https://github.com/user-attachments/assets/4b2d5af9-ede8-48ff-8b16-0fcc54e4a4af)
+![image](https://github.com/user-attachments/assets/f67820fb-6c9a-43f9-8755-47a391277759)
+Click save job and edit script
+AWS will create an entire pyspark script for you
+![image](https://github.com/user-attachments/assets/43e5b68d-9cbf-4e4b-b0e1-38d2f21584d4)
+
+  We can easily save and run the above , instead we're going to optimization on this particular job (Refer pyspark code)
+
+  Go to the job that we just created , ere we can track if the job is running or not , We can see an error has occured
+  ![image](https://github.com/user-attachments/assets/dab69cb9-7cd9-45c7-b0e0-235c2bb8f3af)
+
+  We can see our data is in different language. the programming language cannot easily understand this language and convert into machine language. You need to encode this data into utf 
+  ![image](https://github.com/user-attachments/assets/42b6b91c-1f50-451c-ac6b-db85d07eaa4f)
+
+
+  But instead of converting into utf standard , let's just filter out few regions that only we require where machine can understand the language . So for that enter this line of code in our pyspark
+  
+  ![image](https://github.com/user-attachments/assets/6124cb5b-ac2f-4b34-ab21-e9f563d4d34a)
+  ![image](https://github.com/user-attachments/assets/67888b3e-6a44-49fb-8ab5-1056cdf94603)
+
+  Now save and run the job
+  ![image](https://github.com/user-attachments/assets/4137bb16-7fe1-4d24-830c-8c787e098bee)
+  And now after successful run we can see the output here
+  ![image](https://github.com/user-attachments/assets/dcef2a10-fa82-456f-9fa1-9dcb9902085b)
+
+  Let's create a new crawler
+  ![image](https://github.com/user-attachments/assets/9cf4626a-9569-4147-8a90-83eb726111dc)
+  ![image](https://github.com/user-attachments/assets/76f8081b-1148-4d3d-8557-eabc74092661)
+  ![image](https://github.com/user-attachments/assets/441b1b95-3ab1-4654-aa0a-5da47009e798)
+  ![image](https://github.com/user-attachments/assets/272cf1ba-5ee4-41bd-b809-b505da218121)
+Let's run it
+
+So now if a new json file is being uploaded in our s3 bucket , it should be automatically run the lambda code and the data should be added to cleansed s3 bucket 
+
+For that click on add trigger
+![image](https://github.com/user-attachments/assets/acb81a4a-4001-4a88-bfc3-e83486e3fb8d)
+![image](https://github.com/user-attachments/assets/b39f028a-4f53-4395-89f2-f4ac881fa60c)
+![image](https://github.com/user-attachments/assets/ec83fa95-3e5b-40a2-af50-606cac092a3e)
+
+We can test this by deleting all  our json files in our s3 bucket and adding them again just like we did it before from our cmd, we can see the parquet files being added in our cleaned version of s3 bucket.
+
+Now we have got into the step of creating a Reporting layer where we'll perform ETL and preprocessing operations
+For this we'll be using glue, go to glue studio in glue console
+
+![image](https://github.com/user-attachments/assets/c6bb4b43-ad64-42d0-8812-aa7cad3b1e53)
+Click on view jobs
+![image](https://github.com/user-attachments/assets/2d04460b-b6c3-49f2-b8d6-e26f32e2f7b0)
+Visual with a source and target->crreate
+![image](https://github.com/user-attachments/assets/4b09c70e-bf6b-4558-8496-ba1b035acf6f)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
