@@ -272,6 +272,77 @@ Now if you go to glue and you can see the table being created and now you can qu
 
 ![image](https://github.com/user-attachments/assets/eca34028-fc36-48ef-9d9a-e1d8c059baab)
 
+Understanding the data . Go to glue console -> add crawler
+
+![image](https://github.com/user-attachments/assets/ee5c9266-d85e-424a-ad33-5170dfab1e2d)
+![image](https://github.com/user-attachments/assets/4bdffc11-0661-4871-95b2-246ad5228ae9)
+![image](https://github.com/user-attachments/assets/57eec062-9ef5-42a9-845d-cd2b9bfc2ae5)
+![image](https://github.com/user-attachments/assets/765b3149-7066-4e71-a8f4-065509666dc9)
+![image](https://github.com/user-attachments/assets/79646614-12fd-4cca-8068-1eab36832c68)
+
+Click on finish
+![image](https://github.com/user-attachments/assets/c0952f2f-159f-4909-8251-4f34cfab7b49)
+![image](https://github.com/user-attachments/assets/512f919c-b1cc-40a8-a2bc-03f450b2e970)
+
+Go to athena and preview the table
+![image](https://github.com/user-attachments/assets/a41c37c7-2623-4eb7-a1a5-d9b2e0b3b1d7)
+
+Now we got to join these 2 tables
+![image](https://github.com/user-attachments/assets/ae318b67-ea38-4178-ac1f-325c062988b4)
+Run mthe query 
+![image](https://github.com/user-attachments/assets/8496a9b2-93a5-450d-a0b8-3685d6996470)
+![image](https://github.com/user-attachments/assets/c161701e-dd91-4122-b42a-c7be224da3ae)
+If you see in the above queries , we're casting inside the query which is not a good practice since we have to then caste it everytime
+
+Go to AWS gljue console, go to the the cleaned version of the table
+![image](https://github.com/user-attachments/assets/144e101c-ba5d-4bfe-b022-bfdcf58dba23)
+Click on Edit Schema
+![image](https://github.com/user-attachments/assets/ce005e91-9a2c-498b-8550-043e815f95f8)
+
+Go ahead anfd change the column type from string to bigint
+![image](https://github.com/user-attachments/assets/ef0fc6ab-691b-42ee-a958-c892762f01e7)
+![image](https://github.com/user-attachments/assets/ba842b97-6f14-485d-99ab-a1cfe3f177ce)
+
+Now let's try removing the cast in the query and try running it , we get an error
+![image](https://github.com/user-attachments/assets/43c0b3af-e0f0-4ee8-8428-5e8e3bb6bc19
+Basically our parquet file comes with a meta data , so the data type in the meta data has not been changes even tho we changed in aws glue
+![image](https://github.com/user-attachments/assets/bac9979c-3821-4ebf-9e61-44ed699afca7)
+![image](https://github.com/user-attachments/assets/a542eeaf-872e-47d0-9e21-6e65e32e3865)
+Go to the s3 bucket where you've the cleaned version
+![image](https://github.com/user-attachments/assets/001ba078-8a1d-4ad9-b93c-522abfab7c12)
+![image](https://github.com/user-attachments/assets/3f61d9e2-9522-440f-becf-7cb8cb4a40e3)
+
+![image](https://github.com/user-attachments/assets/f803eda1-0a27-4aca-8a93-ab8ce1ee7198)
+
+Once it is deleted , go to the lambda function that we had created and test
+![image](https://github.com/user-attachments/assets/8b9729bf-024b-4adf-bcb6-b101add7ac71)
+
+![image](https://github.com/user-attachments/assets/f6b95d45-1034-4bca-b895-a88cf11b9097)
+![image](https://github.com/user-attachments/assets/af3a7b95-243d-460e-97a7-9591fa49d19b)
+
+Once the code runs successfully
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
