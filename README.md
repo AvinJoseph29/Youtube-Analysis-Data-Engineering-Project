@@ -394,6 +394,79 @@ Visual with a source and target->crreate
 Go to transform and click on  Join 
 ![image](https://github.com/user-attachments/assets/e753bf9b-f9e8-4f5e-8ce5-cd4ad7d8e461)
 ![image](https://github.com/user-attachments/assets/9ba35c74-a3a3-4618-8ed6-05a0cc168883)
+We need to store the above data that is obtained using the join operation , for that we've to  create a new s3 bucket for it
+![image](https://github.com/user-attachments/assets/9e8f0f4c-bfdb-4193-8d97-239f32caced1)
+
+Go to your glue studio and add target
+![image](https://github.com/user-attachments/assets/6ef71a28-092d-4fbd-9449-8fcd715699dc)
+![image](https://github.com/user-attachments/assets/9fc4c3e4-aef4-4e9d-a80d-1765f48de493)
+
+Go to your athena and create a new database to add it above
+![image](https://github.com/user-attachments/assets/e0d27cf8-4ba5-4c91-bc8a-e0dc492feb8f)
+
+![image](https://github.com/user-attachments/assets/ee547337-23d4-44c9-8166-dca21a3cb680)
+![image](https://github.com/user-attachments/assets/1b287030-9870-46e6-a3ce-816de82e9405)
+
+Fill out the job details and click on save 
+![image](https://github.com/user-attachments/assets/ef2049c9-e511-4b3c-805b-822bf8689698)
+
+By clicking on run you can execute the job
+![image](https://github.com/user-attachments/assets/260054fd-afcb-4a12-ada3-b094a0e8684d)
+
+You can monitor it in multiple ways
+1.
+![image](https://github.com/user-attachments/assets/56deb74d-90b5-476d-9741-d5f494d52d3d)
+2. Go to glue studio -> View monitoring
+![image](https://github.com/user-attachments/assets/ad624a78-b72a-4520-a293-ea61db91ea42)
+
+The final output can be viewed in our s3 bucket we created for analytics
+(Since region was selected as partition we can see different files being created for different regions and further for different categories)
+![image](https://github.com/user-attachments/assets/286ae704-1e76-465f-bd8a-8c88c61a9c7b)
+
+![image](https://github.com/user-attachments/assets/db1da9f9-d6b1-4191-9604-0156624636cd)
+
+Now let's create report/visualizations
+Go to aws console-> Quicksight
+![image](https://github.com/user-attachments/assets/306b38f2-b131-4c02-af3b-eb5c139210bf)
+
+Once you register to quicksight -> go to Manage quicksight
+![image](https://github.com/user-attachments/assets/7776f06f-8ef7-47e0-9660-924818e00df9)
+![image](https://github.com/user-attachments/assets/fc4d5c35-6107-4c23-867d-6710c9ccbd18)
+
+We've to import the data from Athena to quicksight
+![image](https://github.com/user-attachments/assets/5d9fad85-d80a-46d2-97d2-21842c4bad4b)
+Create datasource
+![image](https://github.com/user-attachments/assets/3f85040c-04e7-47ca-a4a4-3d27e9405cd1)
+![image](https://github.com/user-attachments/assets/e26571d9-f506-4a6e-a779-ef9f3a3f3d56)
+![image](https://github.com/user-attachments/assets/d4bc4d7c-00ec-4587-ab53-66013ea47f66)
+Click on the final analytics dataset
+![image](https://github.com/user-attachments/assets/0a10fcde-faa5-4e18-a9ae-98d64ef5b143)
+
+Click on create analysis
+![image](https://github.com/user-attachments/assets/bb99f90c-eb76-47ee-b8c9-b24941df4995)
+Then create the dashboard for various kpis
+![image](https://github.com/user-attachments/assets/767ccafd-1ac2-4c5d-9eb9-cf897e3d6df1)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
